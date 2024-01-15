@@ -10,7 +10,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 abstract class Screen {
 
     @Composable
-    protected open fun statusBarColor(): Color = MaterialTheme.colorScheme.background
+    protected open fun statusBarColor(): Color = MaterialTheme.colorScheme.primary
 
     @Composable
     protected open fun statusBarDarkIcons(): Boolean = statusBarColor().luminance() > 0.5f
