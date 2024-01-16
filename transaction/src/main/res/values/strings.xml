@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_transaction">Переказ</string>
-    <string name="title_recipient">Дані отримувача</string>
+    <string name="topbar_swift">SWIFT</string>
+    <string name="topbar_transaction">Переказ</string>
+    <string name="topbar_transaction_swift">Переказ\nSWIFT</string>
+    <string name="topbar_account_main">Рахунок основний</string>
+    <string name="topbar_recipient">Дані отримувача</string>
+    <string name="topbar_intermediary_bank">Дані Банка-посередника</string>
+    <string name="topbar_purpose_of_payment">Призначення платежу</string>
     <string name="btn_next">Продовжити</string>
 </resources>

@@ -3,13 +3,13 @@ package com.artsam.pavlo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.artsam.pavlo.presentation.screen.home.TransactionHome
+import com.artsam.pavlo.presentation.navigation.NavigationHost
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TransactionHome()
+            NavigationHost()
         }
     }
 }

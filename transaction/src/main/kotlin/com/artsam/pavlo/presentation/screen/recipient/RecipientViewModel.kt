@@ -2,7 +2,7 @@ package com.artsam.pavlo.presentation.screen.recipient
 
 import com.artsam.pavlo.presentation.core.MviViewModel
 
-class RecipientViewModel() :
+class RecipientViewModel :
     MviViewModel<RecipientState, RecipientIntent, RecipientEffect>() {
 
     override val emptyState = RecipientState.Uninitialized
