@@ -1,4 +1,4 @@
-package com.artsam.pavlo.presentation.screen.recipient
+package com.artsam.pavlo.presentation.screen.purpose
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,13 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.artsam.pavlo.presentation.core.MviScreen
-import com.artsam.pavlo.presentation.screen.recipient.RecipientIntent.*
-import com.artsam.pavlo.presentation.screen.recipient.RecipientState.*
 
-class RecipientScreen(
-    private val viewModel: RecipientViewModel,
-    private val navigateIntermediaryBankScreen: (Boolean) -> Unit
-) : MviScreen<RecipientState, RecipientIntent, RecipientEffect>(viewModel) {
+class PurposeOfPaymentScreen(
+    private val viewModel: PurposeOfPaymentViewModel,
+    private val navigateConfirmationScreen: (Boolean) -> Unit
+) : MviScreen<PurposeOfPaymentState, PurposeOfPaymentIntent, PurposeOfPaymentEffect>(viewModel) {
 
     @Composable
     override fun Content() {
@@ -28,28 +26,28 @@ class RecipientScreen(
     }
 
     @Composable
-    private fun ScreenContent(state: RecipientState) {
+    private fun ScreenContent(state: PurposeOfPaymentState) {
         Box(modifier = Modifier.fillMaxSize()) {
 
             when (state) {
-                is Uninitialized -> Text(
+                is PurposeOfPaymentState.Uninitialized -> Text(
                     text = "Loading ...",
                     modifier = Modifier.align(Alignment.Center)
                 )
-                is Content -> {
+                is PurposeOfPaymentState.Content -> {
                     Text(
-                        text = "Hello from Recipient screen",
+                        text = "Hello from PurposeOfPayment screen",
                         modifier = Modifier.align(Alignment.Center)
                     )
                     Checkbox(
                         checked = state.isChecked,
-                        onCheckedChange = { viewModel.handleIntent(ChbChanged(it)) },
+                        onCheckedChange = { viewModel.handleIntent(PurposeOfPaymentIntent.ChbChanged(it)) },
                         modifier = Modifier
                             .align(Alignment.Center)
                             .padding(0.dp, 300.dp, 0.dp, 0.dp)
                     )
                     Button(
-                        onClick = { navigateIntermediaryBankScreen(state.isChecked) },
+                        onClick = { navigateConfirmationScreen(state.isChecked) },
                         modifier = Modifier
                             .align(Alignment.BottomCenter)
                             .padding(0.dp, 0.dp, 0.dp, 40.dp)
