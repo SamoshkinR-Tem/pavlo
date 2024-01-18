@@ -9,15 +9,14 @@ sealed interface ConfirmationState : MviState {
     data object Uninitialized : ConfirmationState
 
     data class Content(
-        val isChecked: Boolean = false,
+        val isLoading: Boolean = false,
+        val isShowToast: Boolean = false,
     ) : ConfirmationState
 }
 
 sealed interface ConfirmationIntent : MviIntent {
-
-    data class ChbChanged(val isChecked: Boolean) : ConfirmationIntent
+    data object PostTransactionData : ConfirmationIntent
+    data object ToastShowed : ConfirmationIntent
 }
 
-sealed interface ConfirmationEffect : Effect {
-
-}
+sealed interface ConfirmationEffect : Effect {}

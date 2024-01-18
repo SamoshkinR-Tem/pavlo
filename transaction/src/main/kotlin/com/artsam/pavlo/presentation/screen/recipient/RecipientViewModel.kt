@@ -13,11 +13,11 @@ class RecipientViewModel :
 
     override fun handleIntent(intent: RecipientIntent) {
         when (intent) {
-            is RecipientIntent.ChbChanged -> changeChb(intent.isChecked)
+            is RecipientIntent.ChbChanged -> changeChb(intent.isBtnNextEnabled)
         }
     }
 
     private fun changeChb(isChecked: Boolean) = (currentState as? RecipientState.Content)
-        ?.copy(isChecked = isChecked)
+        ?.copy(isBtnNextEnabled = isChecked)
         ?.let(::setState)
 }

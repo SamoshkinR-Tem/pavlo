@@ -9,13 +9,13 @@ sealed interface IntermediaryBankState : MviState {
     data object Uninitialized : IntermediaryBankState
 
     data class Content(
-        val isChecked: Boolean = false,
+        val isBtnNextEnabled: Boolean = false,
     ) : IntermediaryBankState
 }
 
 sealed interface IntermediaryBankIntent : MviIntent {
 
-    data class ChbChanged(val isChecked: Boolean) : IntermediaryBankIntent
+    data class ChbChanged(val isBtnNextEnabled: Boolean) : IntermediaryBankIntent
 }
 
 sealed interface IntermediaryBankEffect : Effect {

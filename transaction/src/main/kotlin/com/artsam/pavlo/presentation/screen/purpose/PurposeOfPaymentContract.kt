@@ -9,13 +9,13 @@ sealed interface PurposeOfPaymentState : MviState {
     data object Uninitialized : PurposeOfPaymentState
 
     data class Content(
-        val isChecked: Boolean = false,
+        val isBtnNextEnabled: Boolean = false,
     ) : PurposeOfPaymentState
 }
 
 sealed interface PurposeOfPaymentIntent : MviIntent {
 
-    data class ChbChanged(val isChecked: Boolean) : PurposeOfPaymentIntent
+    data class ChbChanged(val isBtnNextEnabled: Boolean) : PurposeOfPaymentIntent
 }
 
 sealed interface PurposeOfPaymentEffect : Effect {

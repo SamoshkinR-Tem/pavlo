@@ -111,14 +111,7 @@ fun NavigationHost() {
                     ).AsComposable()
                 }
                 composable(ROUTE_CONFIRMATION) {
-                    ConfirmationScreen(
-                        viewModel = koinViewModel(),
-                        pushData = { isDataValid ->
-                            if (isDataValid) {
-                                Toast.makeText(context, "Data pushed", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                    ).AsComposable()
+                    ConfirmationScreen(viewModel = koinViewModel()).AsComposable()
                 }
             }
         }

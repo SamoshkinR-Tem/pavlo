@@ -13,11 +13,11 @@ class IntermediaryBankViewModel :
 
     override fun handleIntent(intent: IntermediaryBankIntent) {
         when (intent) {
-            is IntermediaryBankIntent.ChbChanged -> changeChb(intent.isChecked)
+            is IntermediaryBankIntent.ChbChanged -> changeChb(intent.isBtnNextEnabled)
         }
     }
 
     private fun changeChb(isChecked: Boolean) = (currentState as? IntermediaryBankState.Content)
-        ?.copy(isChecked = isChecked)
+        ?.copy(isBtnNextEnabled = isChecked)
         ?.let(::setState)
 }

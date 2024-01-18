@@ -13,11 +13,11 @@ class PurposeOfPaymentViewModel() :
 
     override fun handleIntent(intent: PurposeOfPaymentIntent) {
         when (intent) {
-            is PurposeOfPaymentIntent.ChbChanged -> changeChb(intent.isChecked)
+            is PurposeOfPaymentIntent.ChbChanged -> changeChb(intent.isBtnNextEnabled)
         }
     }
 
     private fun changeChb(isChecked: Boolean) = (currentState as? PurposeOfPaymentState.Content)
-        ?.copy(isChecked = isChecked)
+        ?.copy(isBtnNextEnabled = isChecked)
         ?.let(::setState)
 }
