@@ -7,5 +7,13 @@
     <string name="topbar_recipient">Дані отримувача</string>
     <string name="topbar_intermediary_bank">Дані Банка-посередника</string>
     <string name="topbar_purpose_of_payment">Призначення платежу</string>
+
     <string name="btn_next">Продовжити</string>
+
+    <string name="recipient_description">Всі поля слід заповнювати латинськими літерами</string>
+    <string name="label_account">Рахунок</string>
+    <string name="label_name">Назва</string>
+    <string name="label_country">Країна</string>
+    <string name="label_city">Місто</string>
+    <string name="label_address">Адреса</string>
 </resources>

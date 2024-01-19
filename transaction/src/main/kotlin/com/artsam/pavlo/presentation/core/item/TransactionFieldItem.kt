@@ -37,7 +37,7 @@ fun TransactionFieldItem(
     textStyle: TextStyle = TextStyle(fontWeight = FontWeight.Bold),
     label: @Composable (() -> Unit) = {},
     placeholder: @Composable (() -> Unit) = {},
-    trailingIcon: @Composable (() -> Unit)? = {},
+    trailingIcon: @Composable (() -> Unit)? = null,
     onTrailingIconClick: () -> Unit = {},
     isError: Boolean = false,
     singleLine: Boolean = true,
@@ -157,4 +157,3 @@ fun CustomTextField(
         }
     )
 }
-
